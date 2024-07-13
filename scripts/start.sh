@@ -1,3 +1,3 @@
 #!/bin/bash
-chown unbound:unbound /config/unbound.conf
+echo "Running command unbound -c /config/unbound.conf -d"
 unbound -c /config/unbound.conf -d
