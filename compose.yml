@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  unbound:
+    container_name: unbound
+    image: unbound:latest
+    build:
+      context: .
+      network: host
+      dockerfile: ./Dockerfile
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./config:/config:ro
+networks:
+  default:
+    enable_ipv6: true
